@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+
+@layer base {
+  :root {
+    /* Paleta com Contraste Perfeito - WCAG AAA */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    --primary: 340 82% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 340 82% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 340 82% 48%;
+
+    --radius: 0.5rem;
+
+    /* High Contrast Professional Palette */
+    --gray-50: 0 0% 98%;
+    --gray-100: 0 0% 96%;
+    --gray-200: 0 0% 90%;
+    --gray-300: 0 0% 83%;
+    --gray-400: 0 0% 64%;
+    --gray-500: 0 0% 45%;
+    --gray-600: 0 0% 32%;
+    --gray-700: 0 0% 25%;
+    --gray-800: 0 0% 15%;
+    --gray-900: 0 0% 9%;
+
+    --pink-50: 340 100% 98%;
+    --pink-100: 340 100% 95%;
+    --pink-500: 340 82% 48%;
+    --pink-600: 340 82% 42%;
+    --pink-700: 340 82% 36%;
+
+    /* Typography */
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-primary: 340 82% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 340 82% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    font-optical-sizing: auto;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    font-optical-sizing: auto;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 py-10 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:px-16 lg:py-20;
+  }
+
+  .container-custom {
+    @apply mx-auto max-w-7xl w-full;
+  }
+
+  .heading-xl {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-[1.1];
+  }
+
+  .heading-lg {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold tracking-tight leading-tight;
+  }
+
+  .heading-md {
+    @apply text-xl sm:text-2xl md:text-3xl font-serif font-bold tracking-tight;
+  }
+
+  .heading-sm {
+    @apply text-lg sm:text-xl md:text-2xl font-serif font-semibold;
+  }
+
+  .text-body {
+    @apply text-sm sm:text-base md:text-lg font-sans font-normal leading-relaxed;
+  }
+
+  .text-body-sm {
+    @apply text-xs sm:text-sm md:text-base font-sans font-normal leading-relaxed;
+  }
+
+  .label-sm {
+    @apply text-xs sm:text-sm font-sans font-bold uppercase tracking-wider;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animações - Loading e Hero */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  @keyframes slideToSide {
+    from {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-typing {
+    overflow: hidden;
+    border-right: 3px solid;
+    white-space: nowrap;
+    animation: typing 2s steps(30) forwards, blink 0.75s step-end infinite;
+  }
+
+  .animate-slide-to-side {
+    animation: slideToSide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.8s ease-out forwards;
+  }
+}
+
+/* Carousel Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

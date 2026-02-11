@@ -1,0 +1,3 @@
+# Netlify redirects (se usar Netlify no futuro)
+/instagram.html / 302
+/instagram / 302

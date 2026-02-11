@@ -1,0 +1,20 @@
+# Headers para instagram.html - força no-cache
+/instagram.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+
+# Headers para index.html - força no-cache
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+
+# Headers gerais de segurança
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer-when-downgrade
