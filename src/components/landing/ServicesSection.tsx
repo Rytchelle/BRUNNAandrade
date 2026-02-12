@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Scissors, Paintbrush, Sparkles, Crown, MessageCircle, Search, X } from "lucide-react";
+import { Scissors, Paintbrush, Sparkles, Crown, MessageCircle, Search, X, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -9,6 +9,11 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import {
   Carousel,
   CarouselContent,
@@ -45,7 +50,7 @@ const services = [
     title: "Retoque Inteligente",
     description: "Retoque de raiz com progressiva ou selagem + Reconstrução. Para manter o liso perfeito.",
     price: "R$ 200",
-    image: "/625650612_17933927016168963_4856427567242028863_n.jpg",
+    image: "/625650612_17933927016168963_4856427567242028863_n.jpeg",
     featured: true,
     category: "Pacote"
   },
@@ -83,7 +88,7 @@ const services = [
     title: "Progressiva Tradicional",
     description: "Alisamento profissional duradouro. Reduz volume e elimina frizz com resultado natural.",
     price: "R$ 200",
-    image: "/625954328_17933927025168963_6200012453283884317_n.jpg",
+    image: "/625954328_17933927025168963_6200012453283884317_n.jpeg",
     featured: true,
     category: "Alisamento"
   },
@@ -101,7 +106,7 @@ const services = [
     title: "Definitiva",
     description: "Alisamento permanente de alta performance. Para quem busca liso impecável e duradouro.",
     price: "R$ 220",
-    image: "/626847815_17933923086168963_5914284234108068810_n.jpg",
+    image: "/626847815_17933923086168963_5914284234108068810_n.jpeg",
     featured: true,
     category: "Alisamento"
   },
@@ -157,7 +162,7 @@ const services = [
     title: "Botox Capilar",
     description: "Alinhamento suave + redução de frizz + brilho intenso. Trata profundamente sem agredir os fios.",
     price: "R$ 150",
-    image: "/625954328_17933927025168963_6200012453283884317_n.jpg",
+    image: "/625954328_17933927025168963_6200012453283884317_n.jpeg",
     featured: true,
     category: "Tratamento"
   },
@@ -251,7 +256,7 @@ const services = [
     title: "Banho de Brilho",
     description: "Tratamento de brilho intenso. Revitaliza a cor e sela as cutículas.",
     price: "R$ 130",
-    image: "/625954328_17933927025168963_6200012453283884317_n.jpg",
+    image: "/625954328_17933927025168963_6200012453283884317_n.jpeg",
     featured: false,
     category: "Coloração"
   },
@@ -262,7 +267,7 @@ const services = [
     title: "Escova Lisa",
     description: "Escova profissional com fios alinhados. Controla frizz e dá movimento natural.",
     price: "R$ 50",
-    image: "/625650612_17933927016168963_4856427567242028863_n.jpg",
+    image: "/625650612_17933927016168963_4856427567242028863_n.jpeg",
     featured: false,
     category: "Finalização"
   },
@@ -280,7 +285,7 @@ const services = [
     title: "Finalização com Prancha/Babyliss",
     description: "Finalização profissional com prancha ou babyliss. Inclui lavagem capilar.",
     price: "R$ 70",
-    image: "/626847815_17933923086168963_5914284234108068810_n.jpg",
+    image: "/626847815_17933923086168963_5914284234108068810_n.jpeg",
     featured: false,
     category: "Finalização"
   },
@@ -294,8 +299,9 @@ const ServicesSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isInfoOpen, setIsInfoOpen] = useState(false);
 
-  const whatsappNumber = "5511999999999"; // ALTERAR PARA O NÚMERO DA BRUNNA
+  const whatsappNumber = "5511984873424"; // Número da Brunna
   
   const getWhatsAppLink = (serviceName: string) => {
     const message = encodeURIComponent(`Olá! Gostaria de saber mais sobre o serviço: ${serviceName}`);
@@ -541,90 +547,113 @@ const ServicesSection = () => {
 
         {/* Modal de Detalhes do Serviço */}
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogContent className="max-w-3xl max-h-[95vh] overflow-y-auto p-0 gap-0">
             {selectedService && (
-              <>
-                <DialogHeader>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center">
-                      <selectedService.icon className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <DialogTitle className="text-2xl font-serif font-bold text-gray-900 leading-tight">
-                        {selectedService.title}
-                      </DialogTitle>
-                      <p className="text-sm text-gray-600 mt-1">
-                        Categoria: {selectedService.category}
-                      </p>
-                    </div>
-                  </div>
-                </DialogHeader>
+              <div className="relative">
+                {/* Botão Fechar Customizado */}
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white flex items-center justify-center shadow-lg transition-all hover:scale-110"
+                >
+                  <X className="w-5 h-5 text-gray-700" />
+                </button>
 
                 {/* Imagem do Serviço */}
-                <div className="relative h-64 rounded-2xl overflow-hidden mb-6">
+                <div className="relative h-80 overflow-hidden">
                   <img 
                     src={selectedService.image} 
                     alt={selectedService.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute top-4 right-4 px-4 py-2 rounded-full bg-white shadow-xl border-2 border-gray-100">
-                    <p className="text-lg font-bold text-primary">{selectedService.price}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="absolute bottom-4 left-6 right-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shadow-lg">
+                          <selectedService.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h2 className="text-2xl font-bold text-white drop-shadow-lg">
+                            {selectedService.title}
+                          </h2>
+                          <p className="text-white/90 text-sm drop-shadow">
+                            {selectedService.category}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="px-4 py-2 rounded-full bg-white/95 backdrop-blur-sm shadow-lg">
+                        <p className="text-xl font-bold text-primary">{selectedService.price}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Descrição Detalhada */}
-                <DialogDescription className="text-base text-gray-700 leading-relaxed mb-6">
-                  {selectedService.description}
-                </DialogDescription>
+                {/* Conteúdo do Modal */}
+                <div className="p-6">
+                  {/* Descrição */}
+                  <div className="mb-6">
+                    <h3 className="text-lg font-bold text-gray-900 mb-3">Sobre este serviço</h3>
+                    <p className="text-gray-700 leading-relaxed">
+                      {selectedService.description}
+                    </p>
+                  </div>
 
-                {/* Informações Adicionais */}
-                <div className="bg-gray-50 rounded-2xl p-6 mb-6">
-                  <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                    <Sparkles className="w-5 h-5 text-primary" />
-                    Informações Importantes
-                  </h3>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Produtos profissionais de alta qualidade</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Atendimento personalizado e exclusivo</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Duração e valor podem variar conforme o comprimento e estado do cabelo</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Agende com antecedência para garantir seu horário</span>
-                    </li>
-                  </ul>
-                </div>
+                  {/* Informações Importantes - Collapsible */}
+                  <Collapsible open={isInfoOpen} onOpenChange={setIsInfoOpen} className="mb-6">
+                    <CollapsibleTrigger asChild>
+                      <button className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors">
+                        <div className="flex items-center gap-3">
+                          <Sparkles className="w-5 h-5 text-primary" />
+                          <span className="font-bold text-gray-900">Informações Importantes</span>
+                        </div>
+                        {isInfoOpen ? (
+                          <ChevronUp className="w-5 h-5 text-gray-600" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-gray-600" />
+                        )}
+                      </button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="mt-3">
+                      <div className="bg-gray-50 rounded-xl p-4">
+                        <ul className="space-y-3 text-sm text-gray-700">
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                            <span>Produtos profissionais de alta qualidade</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                            <span>Atendimento personalizado e exclusivo</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                            <span>Duração e valor podem variar conforme o comprimento e estado do cabelo</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                            <span>Agende com antecedência para garantir seu horário</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                            <span>Consulta prévia gratuita via WhatsApp</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
 
-                {/* Botões de Ação */}
-                <div className="flex flex-col sm:flex-row gap-3">
+                  {/* Botão de Agendar - Maior e Mais Bonito */}
                   <Button 
                     size="lg"
-                    className="flex-1 bg-primary hover:bg-primary/90 text-white font-semibold"
+                    className="w-full h-16 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white font-bold text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 rounded-xl"
                     asChild
                   >
                     <a href={getWhatsAppLink(selectedService.title)} target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="w-5 h-5" />
+                      <MessageCircle className="w-6 h-6 mr-3" />
                       Agendar pelo WhatsApp
                     </a>
                   </Button>
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    className="flex-1 border-2 border-gray-300 hover:bg-gray-50"
-                    onClick={() => setIsModalOpen(false)}
-                  >
-                    Fechar
-                  </Button>
                 </div>
-              </>
+              </div>
             )}
           </DialogContent>
         </Dialog>

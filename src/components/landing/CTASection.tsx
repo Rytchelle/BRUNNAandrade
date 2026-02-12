@@ -1,71 +1,160 @@
-import { Phone, ArrowRight, Sparkles } from "lucide-react";
+import { Phone, ArrowRight, Sparkles, Clock, MapPin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const CTASection = () => {
-  const whatsappNumber = "5511999999999"; // ALTERAR PARA O NÚMERO DA BRUNNA
+  const whatsappNumber = "5511984873424";
   const whatsappMessage = encodeURIComponent("Olá! Gostaria de agendar um horário no Estúdio Brunna Andrade.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
+  const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
   return (
-    <section className="section-padding bg-gradient-to-br from-primary via-purple-600 to-pink-600 relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-white/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-56 sm:w-80 h-56 sm:h-80 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
+    <section 
+      ref={elementRef}
+      className="section-padding bg-gray-900 relative overflow-hidden"
+    >
+      {/* Geometric Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-10 left-10 w-32 h-32 border-2 border-primary rotate-45" />
+          <div className="absolute top-20 right-20 w-24 h-24 border border-primary/50 rotate-12" />
+          <div className="absolute bottom-20 left-20 w-40 h-40 border border-primary/30 -rotate-12" />
+          <div className="absolute bottom-10 right-10 w-28 h-28 border-2 border-primary/40 rotate-45" />
+        </div>
       </div>
 
-      <div className="container-custom px-4 sm:px-6 md:px-8 lg:px-16 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          {/* Icon */}
-          <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/20 backdrop-blur-sm mb-6 sm:mb-8">
-            <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-          </div>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
 
-          {/* Heading - Mobile First */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold tracking-tight leading-tight text-white mb-4 sm:mb-6">
-            Pronta para uma{" "}
-            <span className="italic">transformação</span>?
-          </h2>
+      <div className="container-custom px-4 sm:px-6 md:px-8 lg:px-16 relative z-10">
+        {/* Main Content */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
-          <p className="text-sm sm:text-base md:text-lg text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
-            Agende seu horário agora mesmo e venha viver uma experiência única de 
-            cuidado e beleza. Estou pronta para atendê-la com todo carinho!
-          </p>
-          
-          {/* CTA Buttons - Mobile First */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+          {/* Left Side - Content */}
+          <div className={`transition-all duration-1000 ${
+            isVisible 
+              ? 'opacity-100 translate-x-0' 
+              : 'opacity-0 -translate-x-8'
+          }`}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+                Agende Agora
+              </span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight leading-tight text-white mb-6">
+              Transforme seu{" "}
+              <span className="text-primary italic">visual hoje</span>
+            </h2>
+            
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+              Não espere mais para cuidar de você! Agende seu horário e venha viver 
+              uma experiência única de beleza e bem-estar.
+            </p>
+
+            {/* Quick Info Cards */}
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-gray-800/50 border border-gray-700">
+                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                  <Clock className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-white">Horário</p>
+                  <p className="text-xs text-gray-400">Somente com hora marcada</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-gray-800/50 border border-gray-700">
+                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-white">Localização</p>
+                  <p className="text-xs text-gray-400">Itaquera, São Paulo</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* CTA Button */}
             <Button 
               size="lg" 
-              className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 font-bold text-base sm:text-lg py-6 sm:py-7 px-8 shadow-2xl hover:shadow-xl transition-all hover:scale-105"
+              className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white font-bold text-lg py-6 px-8 shadow-xl hover:shadow-2xl transition-all hover:scale-105 group"
               asChild
             >
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5 group-hover:animate-bounce" />
                 Agendar pelo WhatsApp
-              </a>
-            </Button>
-            
-            <Button 
-              size="lg" 
-              className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 font-medium text-base sm:text-lg py-6 sm:py-7 px-8 transition-all"
-              asChild
-            >
-              <a href="#contato">
-                Ver Contato
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
           </div>
 
-          {/* Trust Badge */}
-          <div className="mt-8 sm:mt-10 flex items-center justify-center gap-2 text-white/80 text-xs sm:text-sm">
-            <div className="flex -space-x-2">
-              <div className="w-8 h-8 rounded-full bg-white/20 border-2 border-white/40" />
-              <div className="w-8 h-8 rounded-full bg-white/20 border-2 border-white/40" />
-              <div className="w-8 h-8 rounded-full bg-white/20 border-2 border-white/40" />
+          {/* Right Side - Visual Card */}
+          <div className={`transition-all duration-1000 delay-300 ${
+            isVisible 
+              ? 'opacity-100 translate-x-0' 
+              : 'opacity-0 translate-x-8'
+          }`}>
+            <div className="relative">
+              {/* Main Card */}
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 border-2 border-gray-700 shadow-2xl">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-primary/20 flex items-center justify-center mb-4">
+                    <Sparkles className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-serif font-bold text-white mb-2">
+                    Estúdio Brunna Andrade
+                  </h3>
+                  <p className="text-gray-400">Elevando sua autoestima</p>
+                </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-4 mb-8">
+                  <div className="text-center p-4 rounded-xl bg-gray-700/50">
+                    <p className="text-2xl font-bold text-primary">8+</p>
+                    <p className="text-xs text-gray-400">Anos</p>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-gray-700/50">
+                    <p className="text-2xl font-bold text-primary">2K+</p>
+                    <p className="text-xs text-gray-400">Clientes</p>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-gray-700/50">
+                    <p className="text-2xl font-bold text-primary">28</p>
+                    <p className="text-xs text-gray-400">Serviços</p>
+                  </div>
+                </div>
+
+                {/* Social Proof */}
+                <div className="text-center">
+                  <div className="flex justify-center items-center gap-1 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <div key={i} className="w-5 h-5 rounded-full bg-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-gray-300 mb-4">
+                    "Profissional incrível! Sempre saio de lá me sentindo renovada."
+                  </p>
+                  
+                  {/* Instagram Link */}
+                  <a 
+                    href="https://www.instagram.com/studiobrunnasandradeh" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-semibold hover:scale-105 transition-transform"
+                  >
+                    <Instagram className="w-4 h-4" />
+                    @studiobrunnasandradeh
+                  </a>
+                </div>
+              </div>
+
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-primary animate-bounce" />
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 rounded-full bg-primary/60 animate-bounce" style={{ animationDelay: '0.5s' }} />
             </div>
-            <span>+2000 clientes satisfeitas</span>
           </div>
         </div>
       </div>

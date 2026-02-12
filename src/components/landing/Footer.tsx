@@ -1,4 +1,4 @@
-import { Heart, Instagram, Facebook, MapPin, Phone, Clock } from "lucide-react";
+import { Heart, Instagram, MapPin, Phone, Clock } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,18 +23,13 @@ const Footer = () => {
             {/* Social Links - Mobile Optimized */}
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.instagram.com/studiobrunnasandradeh?igsh=OWRkNTc5ejcycGUz&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-11 h-11 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-11 h-11 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -76,15 +71,25 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm sm:text-base text-white/70">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span>(11) 99999-9999</span>
+                <div>
+                  <span>(11) 98487-3424</span>
+                  <a 
+                    href="https://wa.me/5511984873424?text=Olá! Gostaria de agendar um horário no Estúdio Brunna Andrade."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mt-1 text-xs text-primary hover:text-primary/80 transition-colors"
+                  >
+                    Clique para enviar WhatsApp
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-3 text-sm sm:text-base text-white/70">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span>Rua Exemplo, 123<br />Centro - São Paulo, SP</span>
+                <span>Rua Waldemar Mancini, 67<br />Itaquera - São Paulo, SP<br />CEP: 08295-290</span>
               </li>
               <li className="flex items-start gap-3 text-sm sm:text-base text-white/70">
                 <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span>Seg a Sáb: 9h às 19h</span>
+                <span>Somente com hora marcada</span>
               </li>
             </ul>
           </div>

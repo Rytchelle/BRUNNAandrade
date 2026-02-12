@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
 const animatedImages = [
-  "/625954328_17933927025168963_6200012453283884317_n-removebg-preview.png",
+  "/ddsdsd.png",
   "/download.png"
 ];
 
@@ -28,7 +28,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url("/625954328_17933927025168963_6200012453283884317_n.jpg")'
+          backgroundImage: 'url("/625954328_17933927025168963_6200012453283884317_n.jpeg")'
         }}
       >
         {/* Dark Overlay for better text contrast - mais escuro que no loading */}
@@ -47,7 +47,7 @@ const HeroSection = () => {
           </p>
 
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold tracking-tight leading-[1.1] text-white mb-8 sm:mb-12 md:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] text-white mb-8 sm:mb-12 md:mb-16">
             Elevando a sua{" "}
             <span className="text-primary italic">autoestima</span>
           </h1>

@@ -16,8 +16,9 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({ name: "", phone: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const whatsappNumber = "5511999999999"; // ALTERAR PARA O NÚMERO DA BRUNNA
+  const whatsappNumber = "5511984873424"; // Número da Brunna
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
+  const instagramLink = "https://www.instagram.com/studiobrunnasandradeh?igsh=OWRkNTc5ejcycGUz&utm_source=qr";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -99,7 +100,7 @@ const ContactSection = () => {
                 <div>
                   <h3 className="text-base sm:text-lg font-serif font-bold text-gray-900 mb-1">Telefone</h3>
                   <p className="text-sm sm:text-base font-semibold text-gray-900 mb-1">(11) 99999-9999</p>
-                  <p className="text-xs sm:text-sm text-gray-700">Seg a Sáb, 9h às 19h</p>
+                  <p className="text-xs sm:text-sm text-gray-700">Seg a Sáb, com hora marcada</p>
                 </div>
               </div>
             </div>
@@ -112,12 +113,35 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-serif font-bold text-gray-900 mb-1">Localização</h3>
-                  <p className="text-sm sm:text-base text-gray-900 mb-1">Rua Exemplo, 123</p>
-                  <p className="text-xs sm:text-sm text-gray-700">Centro - São Paulo, SP</p>
+                  <p className="text-sm sm:text-base text-gray-900 mb-1">Rua Waldemar Mancini, 67</p>
+                  <p className="text-xs sm:text-sm text-gray-700">Itaquera - São Paulo, SP</p>
+                  <p className="text-xs sm:text-sm text-gray-700">CEP: 08295-290</p>
                 </div>
               </div>
             </div>
 
+            {/* Instagram Card */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-5 sm:p-6 border border-purple-200 hover:border-purple-300 hover:shadow-xl transition-all">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
+                  <Instagram className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-base sm:text-lg font-serif font-bold text-gray-900 mb-1">Instagram</h3>
+                  <p className="text-sm sm:text-base font-semibold text-gray-900 mb-1">@studiobrunnasandradeh</p>
+                  <p className="text-xs sm:text-sm text-gray-700 mb-3">Veja nossos trabalhos</p>
+                  <Button 
+                    size="sm" 
+                    className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white"
+                    asChild
+                  >
+                    <a href={instagramLink} target="_blank" rel="noopener noreferrer">
+                      Seguir no Instagram
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
             {/* Hours Card */}
             <div className="bg-gray-50 rounded-2xl p-5 sm:p-6 border border-gray-200 hover:border-primary/40 hover:shadow-xl transition-all">
               <div className="flex items-start gap-4">
@@ -126,8 +150,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-serif font-bold text-gray-900 mb-1">Horário</h3>
-                  <p className="text-sm sm:text-base text-gray-900 mb-1">Segunda a Sábado</p>
-                  <p className="text-xs sm:text-sm text-gray-700">9h às 19h</p>
+                  <p className="text-sm sm:text-base text-gray-900 mb-1">Somente com</p>
+                  <p className="text-xs sm:text-sm text-gray-700">hora marcada</p>
                 </div>
               </div>
             </div>

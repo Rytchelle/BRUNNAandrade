@@ -20,7 +20,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url("/625954328_17933927025168963_6200012453283884317_n.jpg")'
+          backgroundImage: 'url("/625954328_17933927025168963_6200012453283884317_n.jpeg")'
         }}
       >
         {/* Light Overlay for Loading */}
@@ -33,7 +33,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
         <div className="animate-scale-in">
           <div className="relative">
             <img
-              src="/625954328_17933927025168963_6200012453283884317_n-removebg-preview.png"
+              src="/ddsdsd.png"
               alt="Brunna Andrade"
               className="w-48 sm:w-64 md:w-80 lg:w-96 h-auto object-contain"
               style={{
