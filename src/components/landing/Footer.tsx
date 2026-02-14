@@ -17,7 +17,7 @@ const Footer = () => {
             </a>
             <p className="text-sm sm:text-base text-white/70 max-w-md mb-6 leading-relaxed">
               Especializada em tratamentos capilares. Transformando cabelos e 
-              elevando autoestima com profissionalismo e dedicação há mais de 8 anos.
+              elevando autoestima com profissionalismo e dedicação há mais de 5 anos.
             </p>
             
             {/* Social Links - Mobile Optimized */}

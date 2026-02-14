@@ -75,7 +75,7 @@ const AboutSection = () => {
                     <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-xl sm:text-2xl font-bold text-gray-900">+8 anos</p>
+                    <p className="text-xl sm:text-2xl font-bold text-gray-900">+5 anos</p>
                     <p className="text-xs sm:text-sm text-gray-700">de dedicação</p>
                   </div>
                 </div>
@@ -177,7 +177,7 @@ const AboutSection = () => {
                   <Award className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2 drop-shadow-sm">Experiência</h3>
-                <p className="text-sm sm:text-base text-gray-600 drop-shadow-sm">8+ anos</p>
+                <p className="text-sm sm:text-base text-gray-600 drop-shadow-sm">5+ anos</p>
               </div>
             </div>
           </div>

@@ -114,11 +114,11 @@ const CTASection = () => {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 mb-8">
                   <div className="text-center p-4 rounded-xl bg-gray-700/50">
-                    <p className="text-2xl font-bold text-primary">8+</p>
+                    <p className="text-2xl font-bold text-primary">5+</p>
                     <p className="text-xs text-gray-400">Anos</p>
                   </div>
                   <div className="text-center p-4 rounded-xl bg-gray-700/50">
-                    <p className="text-2xl font-bold text-primary">2K+</p>
+                    <p className="text-2xl font-bold text-primary">1K+</p>
                     <p className="text-xs text-gray-400">Clientes</p>
                   </div>
                   <div className="text-center p-4 rounded-xl bg-gray-700/50">

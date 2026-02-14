@@ -112,12 +112,12 @@ const HeroSection = () => {
             {/* Trust Indicators */}
             <div className="flex items-center justify-center gap-6 sm:gap-8 md:gap-12 pt-6 sm:pt-8 border-t border-white/20 max-w-md mx-auto">
               <div className="text-center">
-                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">8+</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">5+</p>
                 <p className="text-xs sm:text-sm text-white/80">Anos</p>
               </div>
               <div className="w-px h-12 bg-white/20" />
               <div className="text-center">
-                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">2k+</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">1k+</p>
                 <p className="text-xs sm:text-sm text-white/80">Clientes</p>
               </div>
               <div className="w-px h-12 bg-white/20" />

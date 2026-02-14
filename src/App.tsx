@@ -25,10 +25,12 @@ const App = () => {
 
   const handleLoadingComplete = () => {
     sessionStorage.setItem('hasLoaded', 'true');
-    setIsLoading(false);
+    // Mostra o conteúdo imediatamente quando o loading termina
+    setShowContent(true);
+    // Remove o loading após uma pequena sobreposição
     setTimeout(() => {
-      setShowContent(true);
-    }, 300);
+      setIsLoading(false);
+    }, 100);
   };
 
   return (
@@ -36,15 +38,24 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
-        {showContent && (
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        )}
+        <div className="relative">
+          {/* Conteúdo do site sempre renderizado, mas oculto durante loading */}
+          <div className={`transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </div>
+          
+          {/* Loading screen sobreposto */}
+          {isLoading && (
+            <div className="absolute inset-0 z-50">
+              <LoadingScreen onComplete={handleLoadingComplete} />
+            </div>
+          )}
+        </div>
       </TooltipProvider>
     </QueryClientProvider>
   );
