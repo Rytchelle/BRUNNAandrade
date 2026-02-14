@@ -18,7 +18,7 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const whatsappNumber = "5511999999999";
+  const whatsappNumber = "5511984873424"; // Número da Brunna
   const whatsappMessage = encodeURIComponent("Olá! Gostaria de agendar um horário no Estúdio Brunna Andrade.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -80,7 +80,7 @@ const HeroSection = () => {
           <div className="px-6 sm:px-8 md:px-12 pb-8 sm:pb-10 md:pb-12 -mt-32 sm:-mt-36 md:-mt-40 relative z-20">
             {/* Subheadline */}
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-8 sm:mb-10 md:mb-12 leading-relaxed max-w-3xl mx-auto text-center pt-4 sm:pt-6 md:pt-8">
-              Especializada em cabelos, unhas e estética. Transforme seu visual com profissionalismo.
+              Especializada em tratamentos capilares. Transforme seu cabelo com profissionalismo.
             </p>
 
             {/* CTA Buttons */}

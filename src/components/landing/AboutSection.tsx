@@ -41,7 +41,7 @@ const AboutSection = () => {
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-8'
           }`}>
-            Paixão por beleza e{" "}
+            Paixão por cabelos e{" "}
             <span className="text-primary italic">cuidado especial</span>
           </h2>
         </div>
@@ -60,7 +60,7 @@ const AboutSection = () => {
             <div className="rounded-2xl overflow-hidden shadow-xl bg-gray-50 transition-smooth hover:shadow-2xl hover:scale-[1.02]">
               <img 
                 src={aboutImage} 
-                alt="Brunna Andrade - Profissional de beleza"
+                alt="Brunna Andrade - Especialista em cabelos"
                 className="w-full h-auto object-contain transition-smooth"
               />
               

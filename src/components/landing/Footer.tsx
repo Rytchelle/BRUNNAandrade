@@ -16,7 +16,7 @@ const Footer = () => {
               </span>
             </a>
             <p className="text-sm sm:text-base text-white/70 max-w-md mb-6 leading-relaxed">
-              Especializada em cabelos, unhas e estética. Transformando visual e 
+              Especializada em tratamentos capilares. Transformando cabelos e 
               elevando autoestima com profissionalismo e dedicação há mais de 8 anos.
             </p>
             
@@ -51,9 +51,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#diferenciais" className="text-sm sm:text-base text-white/70 hover:text-white transition-colors flex items-center gap-2">
+                <a href="#depoimentos" className="text-sm sm:text-base text-white/70 hover:text-white transition-colors flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Diferenciais
+                  Depoimentos
                 </a>
               </li>
               <li>
@@ -103,9 +103,20 @@ const Footer = () => {
             <p className="text-xs sm:text-sm text-white/50">
               © {currentYear} Estúdio Brunna Andrade. Todos os direitos reservados.
             </p>
-            <p className="text-xs sm:text-sm text-white/50 flex items-center gap-1.5">
-              Feito com <Heart className="w-4 h-4 text-primary fill-primary" /> para você
-            </p>
+            <div className="flex items-center gap-1.5">
+              <p className="text-xs sm:text-sm text-white/50 flex items-center gap-1.5">
+                Desenvolvido com <Heart className="w-4 h-4 text-primary fill-primary" /> por
+              </p>
+              <a 
+                href="https://www.instagram.com/vytrini.digital/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs sm:text-sm text-green-500 hover:text-green-400 transition-colors font-semibold flex items-center gap-1.5"
+              >
+                <Instagram className="w-4 h-4" />
+                Vytrini Digital
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -22,11 +22,11 @@ const Header = () => {
   const navLinks = [
     { href: "#sobre", label: "Sobre" },
     { href: "#servicos", label: "Serviços" },
-    { href: "#diferenciais", label: "Diferenciais" },
+    { href: "#depoimentos", label: "Depoimentos" },
     { href: "#contato", label: "Contato" },
   ];
 
-  const whatsappNumber = "5511999999999"; // ALTERAR PARA O NÚMERO DA BRUNNA
+  const whatsappNumber = "5511984873424"; // Número da Brunna
   const whatsappMessage = encodeURIComponent("Olá! Gostaria de agendar um horário no Estúdio Brunna Andrade.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 

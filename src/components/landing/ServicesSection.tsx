@@ -32,7 +32,7 @@ const services = [
     title: "Liso dos Sonhos",
     description: "Progressiva + Hidratação Profunda + Limpeza de Pontas + Finalização. Alisamento completo com tratamento intensivo.",
     price: "R$ 280",
-    image: "/DASDASD.jpg",
+    image: "/liso.jfif",
     featured: true,
     category: "Pacote"
   },
@@ -41,7 +41,7 @@ const services = [
     title: "Cabelo Liso e Saudável",
     description: "Redução de Volume + Nutrição + Detox + Limpeza de Pontas. Liso com brilho e leveza natural.",
     price: "R$ 250",
-    image: "/AGUA.jpg",
+    image: "/selagemcabelo.jpg",
     featured: true,
     category: "Pacote"
   },
@@ -50,7 +50,7 @@ const services = [
     title: "Retoque Inteligente",
     description: "Retoque de raiz com progressiva ou selagem + Reconstrução. Para manter o liso perfeito.",
     price: "R$ 200",
-    image: "/625650612_17933927016168963_4856427567242028863_n.jpeg",
+    image: "/RETOQUES.jpg",
     featured: true,
     category: "Pacote"
   },
@@ -59,7 +59,7 @@ const services = [
     title: "Coloração Completa",
     description: "Coloração profissional + Tratamento protetor + Finalização com escova. Cor viva e cabelos saudáveis.",
     price: "R$ 120",
-    image: "/DFEFEG.jpg",
+    image: "/coloração2.jpg",
     featured: true,
     category: "Pacote"
   },
@@ -68,7 +68,7 @@ const services = [
     title: "Corte Bordado + Tratamento",
     description: "Elimina pontas duplas sem perder comprimento + Tratamento profundo. Cabelo renovado e saudável.",
     price: "R$ 100",
-    image: "/ASD.jpg",
+    image: "/cortebordado.jpg",
     featured: true,
     category: "Pacote"
   },
@@ -77,7 +77,7 @@ const services = [
     title: "Cronograma Express",
     description: "4 sessões mensais: Hidratação + Nutrição + Reconstrução + Ozônio. Tratamento completo para cabelos danificados.",
     price: "R$ 250/mês",
-    image: "/FEFFSA.jpg",
+    image: "/cronogramacapilar.jpg",
     featured: true,
     category: "Pacote"
   },
@@ -88,7 +88,7 @@ const services = [
     title: "Progressiva Tradicional",
     description: "Alisamento profissional duradouro. Reduz volume e elimina frizz com resultado natural.",
     price: "R$ 200",
-    image: "/625954328_17933927025168963_6200012453283884317_n.jpeg",
+    image: "/progresiva.jpg",
     featured: true,
     category: "Alisamento"
   },
@@ -97,7 +97,7 @@ const services = [
     title: "Selagem Térmica",
     description: "Alinhamento dos fios com selagem profunda. Brilho intenso e maciez prolongada.",
     price: "R$ 180",
-    image: "/FGVERRG.jpg",
+    image: "/selagemcabelo.jpg",
     featured: true,
     category: "Alisamento"
   },
@@ -106,7 +106,7 @@ const services = [
     title: "Definitiva",
     description: "Alisamento permanente de alta performance. Para quem busca liso impecável e duradouro.",
     price: "R$ 220",
-    image: "/626847815_17933923086168963_5914284234108068810_n.jpeg",
+    image: "/definitiva.jfif",
     featured: true,
     category: "Alisamento"
   },
@@ -115,7 +115,7 @@ const services = [
     title: "Retoque de Raiz Progressiva",
     description: "Manutenção de raiz com progressiva. Mantém o liso uniforme sem agredir o comprimento.",
     price: "R$ 150",
-    image: "/DASDASD.jpg",
+    image: "/RETOQUES.jpg",
     featured: false,
     category: "Alisamento"
   },
@@ -124,7 +124,7 @@ const services = [
     title: "Retoque de Raiz Selagem",
     description: "Retoque de raiz com selagem capilar. Alinhamento suave e natural da raiz.",
     price: "R$ 130",
-    image: "/AGUA.jpg",
+    image: "/retiquedeselagem.jpg",
     featured: false,
     category: "Alisamento"
   },
@@ -135,7 +135,7 @@ const services = [
     title: "Hidratação Power",
     description: "Hidratação profunda com máscara profissional + massagem relaxante. Para cabelos ressecados e opacos.",
     price: "R$ 120",
-    image: "/AGUA.jpg",
+    image: "/Hydration Loading…_.jfif",
     featured: true,
     category: "Tratamento"
   },
@@ -144,7 +144,7 @@ const services = [
     title: "Nutrição e Brilho",
     description: "Nutrição profunda com vapor térmico. Devolve brilho e maciez aos fios porosos.",
     price: "R$ 140",
-    image: "/FEFFSA.jpg",
+    image: "/nutriçãoebrilho.jpg",
     featured: true,
     category: "Tratamento"
   },
@@ -153,7 +153,7 @@ const services = [
     title: "Reconstrução Intensiva",
     description: "Reconstrução com queratina + selagem. Para fios danificados por química ou calor excessivo.",
     price: "R$ 160",
-    image: "/DFEFEG.jpg",
+    image: "/reconstruçãocapilar.jpg",
     featured: true,
     category: "Tratamento"
   },
@@ -162,7 +162,7 @@ const services = [
     title: "Botox Capilar",
     description: "Alinhamento suave + redução de frizz + brilho intenso. Trata profundamente sem agredir os fios.",
     price: "R$ 150",
-    image: "/625954328_17933927025168963_6200012453283884317_n.jpeg",
+    image: "/botox capilar.jpg",
     featured: true,
     category: "Tratamento"
   },
@@ -171,7 +171,7 @@ const services = [
     title: "Detox Capilar",
     description: "Limpeza profunda do couro cabeludo. Remove resíduos e equilibra a oleosidade.",
     price: "R$ 120",
-    image: "/FGVERRG.jpg",
+    image: "/tratamento.jpg",
     featured: true,
     category: "Tratamento"
   },
@@ -180,7 +180,7 @@ const services = [
     title: "Tratamento com Ozônio",
     description: "Terapia capilar com ozônio. Potencializa a absorção de ativos e revitaliza os fios.",
     price: "R$ 150",
-    image: "/ASD.jpg",
+    image: "/Tudo sobre Umectação Capilar.jfif",
     featured: false,
     category: "Tratamento"
   },
@@ -200,7 +200,7 @@ const services = [
     title: "Nutrição Básica",
     description: "Nutrição com óleos essenciais. Reposição de lipídios para fios macios e brilhosos.",
     price: "R$ 80",
-    image: "/FEFFSA.jpg",
+    image: "/nutriçõcabelo.jpg",
     featured: false,
     category: "Tratamento"
   },
@@ -209,7 +209,7 @@ const services = [
     title: "Reconstrução Básica",
     description: "Reconstrução com proteínas. Fortalece a estrutura capilar e reduz quebra.",
     price: "R$ 120",
-    image: "/DFEFEG.jpg",
+    image: "/625650612_17933927016168963_4856427567242028863_n.jpeg",
     featured: false,
     category: "Tratamento"
   },
@@ -218,7 +218,7 @@ const services = [
     title: "Cronograma Capilar Básico",
     description: "Cronograma mensal personalizado. Hidratação + Nutrição + Reconstrução programadas.",
     price: "R$ 180/mês",
-    image: "/FGVERRG.jpg",
+    image: "/FEFFSA.jpg",
     featured: false,
     category: "Tratamento"
   },
@@ -229,7 +229,7 @@ const services = [
     title: "Coloração com Tinta do Salão",
     description: "Aplicação de coloração profissional. Cobertura perfeita e cor vibrante.",
     price: "R$ 80",
-    image: "/DFEFEG.jpg",
+    image: "/coloraçaõ.jpg",
     featured: false,
     category: "Coloração"
   },
@@ -238,7 +238,7 @@ const services = [
     title: "Coloração com Tinta da Cliente",
     description: "Aplicação profissional da sua tinta. Técnica especializada para melhor resultado.",
     price: "R$ 50",
-    image: "/DASDASD.jpg",
+    image: "/tintadacliente.jpg",
     featured: false,
     category: "Coloração"
   },
@@ -247,7 +247,7 @@ const services = [
     title: "Tonalização",
     description: "Tonalização para neutralizar tons indesejados. Matiza e realça a cor.",
     price: "R$ 80",
-    image: "/FEFFSA.jpg",
+    image: "/tonalização.jpg",
     featured: false,
     category: "Coloração"
   },
@@ -256,7 +256,7 @@ const services = [
     title: "Banho de Brilho",
     description: "Tratamento de brilho intenso. Revitaliza a cor e sela as cutículas.",
     price: "R$ 130",
-    image: "/625954328_17933927025168963_6200012453283884317_n.jpeg",
+    image: "/nutriçãoebrilho.jpg",
     featured: false,
     category: "Coloração"
   },
@@ -267,7 +267,7 @@ const services = [
     title: "Escova Lisa",
     description: "Escova profissional com fios alinhados. Controla frizz e dá movimento natural.",
     price: "R$ 50",
-    image: "/625650612_17933927016168963_4856427567242028863_n.jpeg",
+    image: "/escovalisa.jfif",
     featured: false,
     category: "Finalização"
   },
@@ -276,7 +276,7 @@ const services = [
     title: "Escova Modelada",
     description: "Escova com pontas modeladas. Acabamento elegante e leveza nos fios.",
     price: "R$ 70",
-    image: "/ASD.jpg",
+    image: "/escovamodelada.jpg",
     featured: false,
     category: "Finalização"
   },
@@ -285,7 +285,7 @@ const services = [
     title: "Finalização com Prancha/Babyliss",
     description: "Finalização profissional com prancha ou babyliss. Inclui lavagem capilar.",
     price: "R$ 70",
-    image: "/626847815_17933923086168963_5914284234108068810_n.jpeg",
+    image: "/babyliseprancha.jpg",
     featured: false,
     category: "Finalização"
   },
@@ -367,7 +367,7 @@ const ServicesSection = () => {
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold tracking-tight leading-tight text-white mb-4 sm:mb-6">
             Serviços completos para{" "}
-            <span className="italic text-primary">realçar sua beleza</span>
+            <span className="italic text-primary">cuidar dos seus cabelos</span>
           </h2>
           <p className="text-sm sm:text-base text-gray-300 leading-relaxed px-4">
             No Estúdio Brunna Andrade, cada atendimento é único e personalizado. 
@@ -509,8 +509,8 @@ const ServicesSection = () => {
 
           {/* Autoplay Indicator */}
           {!isHovered && (
-            <div className="text-center mt-4">
-              <p className="text-xs text-gray-400 flex items-center justify-center gap-2">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10">
+              <p className="text-xs text-gray-400 flex items-center justify-center gap-2 bg-gray-800/80 backdrop-blur-sm px-3 py-1 rounded-full">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 Reprodução automática
               </p>
